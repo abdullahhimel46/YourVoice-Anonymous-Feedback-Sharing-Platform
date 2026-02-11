@@ -1,0 +1,105 @@
+/* feedback Page Form Styles */
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+/* Page Title */
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Feedback Card Wrapper */
+.feedback {
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Form Styling */
+.feedback form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.feedback input[type="text"],
+.feedback textarea {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 18px;
+    background-color: #fff;
+}
+
+.feedback input[type="text"]:focus,
+.feedback textarea:focus {
+    border-color: darkcyan;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 139, 139, 0.1);
+}
+
+.feedback textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Radio Button Group */
+.feedback p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.feedback input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+    /*vertical-align: middle;*/
+    accent-color: darkcyan;
+}
+
+.feedback label[for="positive"],
+.feedback label[for="negative"] {
+    display: block;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.feedback button {
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.feedback button:hover {
+    background-color: #007a7a;
+}

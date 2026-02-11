@@ -1,0 +1,184 @@
+/* Review Cards */
+
+/* Container styles */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: transparent;
+    flex: 1;
+    width: 100%;
+}
+
+/* Search Section */
+.title p{
+    display: flex;
+    justify-content: center;
+    /*padding: 40px 0;*/
+    gap: 8px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* Feedback Card Wrapper */
+.feedback-card {
+    background-color: papayawhip;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Top Section - name, date, and sentiment */
+.top-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-bottom: 5px solid white;
+}
+
+/* name */
+.name {
+    margin: 0;
+    font-weight: 600;
+    flex-grow: 1;
+    font-size: 13px;
+    color: dodgerblue;
+}
+
+/* Date */
+.review-date {
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: darkslategrey;
+}
+
+/* Sentiment badge */
+.status-badge {
+    margin: 0;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 14px;
+    white-space: nowrap;
+    background-color: crimson;
+}
+
+.status-badge.positive {
+    background-color: #5cb85c;
+}
+
+/*post edit*/
+.edit {
+    padding: 2px 5px;
+    color: crimson;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+
+.edit:hover {
+    cursor: pointer;
+    background: red;
+    color: white;
+}
+
+
+/*post deletion*/
+.delete {
+    padding: 2px 5px;
+    color: crimson;
+    border: 1px solid red;
+    border-radius: 2px;
+}
+
+.delete:hover {
+    cursor: pointer;
+    background: red;
+    color: white;
+}
+
+
+/* Mid Section - Review title and message */
+.mid-section {
+    margin-bottom: 12px;
+}
+
+/* Review title */
+.mid-section h3 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Review message */
+.mid-section p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Bottom Section - See Full Review link */
+.bottom-section {
+    padding-top: 6px;
+}
+
+/* Link styling */
+.bottom-section a {
+    color: darkviolet;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Link hover effect */
+.bottom-section a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/*pagination section */
+.pagination {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination span {
+    font-size: 13px;
+    color: #666;
+}

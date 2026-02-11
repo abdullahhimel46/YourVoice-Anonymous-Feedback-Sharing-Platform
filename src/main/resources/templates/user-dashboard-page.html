@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User dashboard</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/user-dashboard-page.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <!-- Navigation Bar Fragment -->
+    <div th:insert="fragments/navbar :: navbar"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="title">
+            <p>User Dashboard</p>
+        </div>
+
+    
+        <!-- Feedbacks -->
+        <div th:each="feedback: ${feedbacks}" class="feedback-card">
+            <!--        Top section-->
+            <div class="top-section">
+                <p class="name" th:text="${feedback.feedbackFor}"></p>
+                <p class="review-date" th:text="${#temporals.format(feedback.createdAt, 'dd MMM yy')}"></p>
+                <p class="status-badge" th:classappend="${feedback.isPositive} ? 'positive' : ''" th:text="${feedback.isPositive} ? 'Positive' : 'Negative'"></p>
+
+                <form th:action="@{'/feedback/' + ${feedback.getFeedbackId()} + '/edit'}" method="get">
+                    <button type="submit" class="edit"> Edit</button>
+                </form>
+
+                <form th:action="@{'/feedback/' + ${feedback.getFeedbackId()} + '/delete'}" method="post"
+                    onsubmit="return confirm('Delete?')">
+                    <button type="submit" class="delete"> Delete</button>
+                </form>
+
+            </div>
+
+            <!--    Mid-section-->
+            <div class="mid-section">
+                <h3 th:text="${feedback.title}"></h3>
+                <p th:text="${feedback.message}"></p>
+            </div>
+
+            <!--  Bottom section-->
+            <div class="bottom-section">
+                <a th:href="@{'/feedback/' + ${feedback.getFeedbackId()}}">See Full Review</a>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+    <!--      Pagination section   -->
+<!--    <div class="pagination">-->
+<!--        <a th:if="${currentPage} > 0" th:href="@{'/home?page= ' + ${currentPage - 1}}" >Previous</a>-->
+<!--        <span th:text="'Page '+${currentPage+1}+' of '+${totalPages}"> </span>-->
+<!--        <a th:if="${currentPage + 1} < ${totalPages}" th:href="@{'/home?page= '+${currentPage+1}}" >Next</a>-->
+<!--    </div>-->
+
+    <!-- Footer Fragment -->
+    <div th:insert="fragments/footer :: footer"></div>
+</body>
+</html>
